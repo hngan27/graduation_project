@@ -1,0 +1,30 @@
+extends index
+
+block content
+  .container.mx-auto.p-8
+    h2.text-3xl.font-bold.mb-6.text-gray-900.text-center #{ t('instructor_details.title') }
+
+    .bg-white.shadow-lg.rounded-lg.p-6
+      .flex.items-center.mb-6
+        // Avatar or Profile Picture (if you have one)
+        img.w-24.h-24.rounded-full.object-cover.mr-6(
+          src=instructor.avatar_url || '/images/instructor.png',
+          alt=t('instructor_details.avatar_alt')
+        )
+
+        .ml-4
+          h3.text-2xl.font-bold.text-gray-900 #{ instructor.name }
+          p.mt-2.text-gray-700
+            | #{ t('instructor_details.email_label') } 
+            span.font-medium #{ instructor.email }
+          p.mt-2.text-gray-700
+            | #{ t('instructor_details.about_label') } 
+            span.font-medium #{ instructor.about || t('instructor_details.not_available') }
+          p.mt-2.text-gray-700
+            | #{ t('instructor_details.specialization_label') } 
+            span.font-medium #{ instructor.specialization || t('instructor_details.not_available') }
+
+      a.inline-block.mt-6.px-4.py-2.text-white.bg-blue-500.rounded-lg.text-center(
+        href='/admin/pending-instructors',
+        class='hover:bg-blue-600'
+      ) #{ t('instructor_details.back_to_list') }

@@ -1,0 +1,36 @@
+{
+  "course": {
+    "courseInfo": "Thông tin khóa học",
+    "courses": "khóa học",
+    "newCourse": "Tạo khóa học",
+    "editCourse": "Chỉnh sửa khóa học",
+    "studentList": "Danh sách học viên",
+    "allLevels": "Tất cả cấp độ",
+    "allStatus": "Tất cả trạng thái",
+    "learning": "Tiếp tục học",
+    "progress": "Tiến độ học tập",
+    "detail": {
+      "about": "Về khóa học này",
+      "taughtBy": "Dạy bởi",
+      "instructor": "Người hướng dẫn",
+      "subInstructor": "Trợ giảng"
+    }
+  },
+  "courseLevels": {
+    "beginner": "Người mới bắt đầu",
+    "intermediate": "Trung cấp",
+    "advanced": "Nâng cao",
+    "expert": "Chuyên gia"
+  },
+  "buttons": {
+    "enrollNow": "Đăng ký ngay",
+    "learnNow": "Học ngay"
+  },
+  "courseDetails": {
+    "instructor": "Người hướng dẫn",
+    "student": "Học viên",
+    "students": "học viên",
+    "duration": "Thời gian",
+    "lessons": "Danh sách bài học"
+  }
+}

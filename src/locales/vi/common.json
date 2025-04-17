@@ -1,0 +1,22 @@
+{
+  "common": {
+    "detail": "Chi tiết",
+    "edit": "Chỉnh sửa",
+    "delete": "Xóa",
+    "submit": "Gửi",
+    "confirmMessage": "Bạn có chắc không?",
+    "back": "Quay lại",
+    "minutes": "phút",
+    "create": "Tạo mới",
+    "action": "Hành động",
+    "recommend": "Đề xuất cho bạn",
+    "myCourses": "Khóa học của tôi",
+    "seeAll": "Xem tất cả"
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "courses": "Khóa học",
+    "instructors": "Người hướng dẫn",
+    "sign_in": "Đăng nhập"
+  }
+}

@@ -1,0 +1,23 @@
+extends index
+
+block content
+  .bg-white.p-8.shadow-lg.rounded-lg
+    h2.text-2xl.font-bold.mb-6 #{ t('sidebar.list_courses') }
+    ul
+      each course in courses
+        li.mb-4
+          a.flex.items-center.hover-text-teal-800(href=`/courses/${course.id}`)
+            svg.w-5.h-5.mr-2(
+              xmlns='http://www.w3.org/2000/svg',
+              fill='none',
+              viewBox='0 0 24 24',
+              stroke='currentColor'
+            )
+              path(
+                stroke-linecap='round',
+                stroke-linejoin='round',
+                stroke-width='2',
+                d='M12 8v8m4-4H8'
+              )
+            | #{ course.name }
+            span.ml-auto.text-gray-500= course.instructor.name

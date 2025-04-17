@@ -1,0 +1,26 @@
+{
+  "exam": {
+    "name": "Exam name",
+    "deadline": "Deadline",
+    "question": "Question",
+    "maxGrade": "Max grade",
+    "status": "Status",
+    "description": "Description",
+    "doExam": "Do Exam",
+    "total": "Total",
+    "time": "Time",
+    "score": "Score",
+    "noExam": "This course has no exam",
+    "todo": "Not started",
+    "doing": "Doing",
+    "pass": "Pass",
+    "fail": "Fail",
+    "viewResult": "View result exam",
+    "backToExam": "Back to exam",
+    "result": "Your best result",
+    "feedback": "Feedback",
+    "grade": "Grade",
+    "studentName": "Mentee name",
+    "listGradeTitle": "List of Mentee Exam Submissions"
+  }
+}

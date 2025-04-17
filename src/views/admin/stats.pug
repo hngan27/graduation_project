@@ -1,0 +1,33 @@
+extends index
+
+block content
+  .container.mx-auto.p-8
+    h2.text-3xl.font-bold.mb-6.text-gray-900.text-center #{ t('statistics.title') }
+
+    .flex.flex-wrap.gap-6
+      // Card for Total Courses
+      a.bg-white.shadow-lg.rounded-lg.p-6.flex-1.text-decoration-none(
+        href='/courses'
+      )
+        h3.text-lg.font-semibold.text-gray-800.text-center #{ t('statistics.total_courses_title') }
+        p.text-2xl.font-bold.text-teal-600.mt-2.text-center #{ statistics.totalCourses }
+        .mt-4.border-t.border-gray-200.pt-4
+          p.text-sm.text-gray-500 #{ t('statistics.total_courses_description') }
+
+      // Card for Total Instructors
+      a.bg-white.shadow-lg.rounded-lg.p-6.flex-1.text-decoration-none(
+        href='/instructors'
+      )
+        h3.text-lg.font-semibold.text-gray-800.text-center #{ t('statistics.total_instructors_title') }
+        p.text-2xl.font-bold.text-teal-600.mt-2.text-center #{ statistics.totalInstructors }
+        .mt-4.border-t.border-gray-200.pt-4
+          p.text-sm.text-gray-500 #{ t('statistics.total_instructors_description') }
+
+      // Card for Pending Instructors
+      a.bg-white.shadow-lg.rounded-lg.p-6.flex-1.text-decoration-none(
+        href='/admin/pending-instructors'
+      )
+        h3.text-lg.font-semibold.text-gray-800.text-center #{ t('statistics.pending_instructors_title') }
+        p.text-2xl.font-bold.text-red-600.mt-2.text-center #{ statistics.pendingInstructors }
+        .mt-4.border-t.border-gray-200.pt-4
+          p.text-sm.text-gray-500 #{ t('statistics.pending_instructors_description') }

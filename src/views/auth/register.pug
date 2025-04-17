@@ -1,0 +1,123 @@
+extends common-layout
+
+block content
+  .flex.items-center.justify-between
+    .flex-1.flex.flex-col.items-center.m-8
+      img.h-50(src='/images/banner.png', alt='SmartEdu Logo')
+
+    .flex-1.flex.items-center.justify-center.m-8
+      .max-w-md.w-full.bg-white.shadow-lg.rounded-lg.p-8
+        //- Tiêu đề
+        h2.text-xl.font-semibold.mb-3.text-center= t('create_account')
+
+        //- Hiển thị thông báo lỗi
+        if error_message
+          p.error-message.text-red-500.text-center.mb-4= error_message
+
+        //- Hiển thị thông báo thành công
+        if success_message
+          p.success-message.text-green-500.text-center.mb-4= success_message
+
+        form.space-y-4(action='/auth/register', method='post')
+          //- Chọn vai trò
+          .flex.justify-center.space-x-4.mb-4
+            button#student-role.role-button.bg-gray-200.text-gray-700.px-3.py-1.rounded(
+              type='button',
+              class='hover:bg-gray-300',
+              onclick='selectRole("Student")'
+            )= t('student')
+            button#instructor-role.role-button.bg-gray-200.text-gray-700.px-3.py-1.rounded(
+              type='button',
+              class='hover:bg-gray-300',
+              onclick='selectRole("Instructor")'
+            )= t('instructor')
+            input#role(type='hidden', name='role', value='Student')
+
+          //- Các trường thông tin chung
+          .form-group.mb-4
+            label.text-sm.italic(for='name')= t('full_name')
+            input#name.w-full.py-1.px-2.border.border-gray-300.rounded-md(
+              type='text',
+              name='name',
+              value=attribute ? attribute.name : '',
+              required
+            )
+            if errors && errors.find(err => err.param === 'name')
+              p.error-message.text-red-500.text-sm= errors.find(err => err.param === 'name').msg
+
+          .form-group.mb-4
+            label.text-sm.italic(for='username')= t('username')
+            input#username.w-full.py-1.px-2.border.border-gray-300.rounded-md(
+              type='text',
+              name='username',
+              value=attribute ? attribute.username : '',
+              required
+            )
+            if errors && errors.find(err => err.param === 'username')
+              p.error-message.text-red-500.text-sm= errors.find(err => err.param === 'username').msg
+
+          .form-group.mb-4
+            label.text-sm.italic(for='email')= t('email')
+            input#email.w-full.py-1.px-2.border.border-gray-300.rounded-md(
+              type='email',
+              name='email',
+              value=attribute ? attribute.email : '',
+              required
+            )
+            if errors && errors.find(err => err.param === 'email')
+              p.error-message.text-red-500.text-sm= errors.find(err => err.param === 'email').msg
+
+          .form-group.mb-4
+            label.text-sm.italic(for='password')= t('password')
+            input#password.w-full.py-1.px-2.border.border-gray-300.rounded-md(
+              type='password',
+              name='password',
+              value=attribute ? attribute.password : '',
+              required
+            )
+            if errors && errors.find(err => err.param === 'password')
+              p.error-message.text-red-500.text-sm= errors.find(err => err.param === 'password').msg
+
+          .form-group.mb-4
+            label.text-sm.italic(for='confirm-password')= t('confirm_password')
+            input#confirm-password.w-full.py-1.px-2.border.border-gray-300.rounded-md(
+              type='password',
+              name='confirmPassword',
+              value=attribute ? attribute.confirmPassword : '',
+              required
+            )
+            if errors && errors.find(err => err.param === 'confirmPassword')
+              p.error-message.text-red-500.text-sm= errors.find(err => err.param === 'confirmPassword').msg
+
+          .form-group.mb-4
+            label.text-sm.italic(for='specialization')= t('specialization')
+            select#specialization.w-full.p-2.border.border-gray-300.rounded-md(
+              name='specialization'
+            )
+              option(value=Specialization.NONE)= t('select')
+              each value, key in Specialization
+                if attribute && value === attribute.specialization
+                  option(value=value, selected)= key
+                else
+                  option(value=value)= key
+
+          //- Các trường bổ sung cho giảng viên
+          #instructor-fields.hidden
+            .form-group.mb-4
+              label.text-sm.italic(for='about')= t('about')
+              textarea#about.w-full.py-1.px-2.border.border-gray-300.rounded-md(
+                name='about'
+              ) #{ attribute ? attribute.about : '' }
+              if errors && errors.find(err => err.param === 'about')
+                p.error-message.text-red-500.text-sm= errors.find(err => err.param === 'about').msg
+
+          //- Nút đăng ký
+          button.signup-button.w-full.bg-blue-500.text-white.py-2.rounded-md(
+            type='submit',
+            class='hover:bg-blue-600'
+          )= t('register_button')
+
+        //- Liên kết đến trang đăng nhập
+        a.block.text-blue-500.text-center.mt-4(href='/auth/login')= t('already_have_account')
+
+  script(src='/javascripts/register.js')

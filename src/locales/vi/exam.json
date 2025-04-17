@@ -1,0 +1,26 @@
+{
+  "exam": {
+    "name": "Tên bài thi",
+    "deadline": "Hạn nộp",
+    "question": "Câu hỏi",
+    "maxGrade": "Điểm tối đa",
+    "status": "Trạng thái",
+    "description": "Mô tả",
+    "doExam": "Làm bài thi",
+    "total": "Tổng",
+    "time": "Thời gian",
+    "score": "Điểm",
+    "noExam": "Khoá học này không có bài thi",
+    "todo": "Chưa bắt đầu",
+    "doing": "Đang làm",
+    "pass": "Đạt",
+    "fail": "Không đạt",
+    "viewResult": "Xem kết quả bài thi",
+    "backToExam": "Quay lại bài thi",
+    "result": "Kết quả tốt nhất của bạn",
+    "feedback": "Nhận xét",
+    "grade": "Điểm",
+    "studentName": "Tên học viên",
+    "listGradeTitle": "Danh sách bài thi của học viên"
+  }
+}

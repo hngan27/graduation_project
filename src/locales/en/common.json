@@ -1,0 +1,23 @@
+{
+  "common": {
+    "detail": "Detail",
+    "edit": "Edit",
+    "delete": "Delete",
+    "submit": "Submit",
+    "confirmMessage": "Are you sure?",
+    "back": "Back",
+    "minutes": "minutes",
+    "create": "Create",
+    "action": "Action",
+    "recommend": "Recommend for you",
+    "myCourses": "My Courses",
+    "seeAll": "See All",
+    "ok": "OK"
+  },
+  "nav": {
+    "home": "Home",
+    "courses": "Courses",
+    "instructors": "Mentors",
+    "sign_in": "Sign in"
+  }
+}
